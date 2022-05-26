@@ -39,19 +39,13 @@ def optimised_euclid_gcd(m, n) -> None:
     """
     try:
         st = datetime.now()
-        ans = 1
         if m < n:
             (m, n) = (n, m)
 
-        while (m % n) >= 0:
-            r = m % n
-            if r == 0:
-                ans = n
-                break
-            else:
-                (m, n) = (n, r)
+        while (m % n) != 0:
+            (m, n) = (n, m % n)
 
-        print(f"GCD is {ans}, time taken: {datetime.now() - st}")
+        print(f"GCD is {n}, time taken: {datetime.now() - st}")
 
     except Exception as err:
         print(f"Exception found: {err}")
