@@ -28,10 +28,37 @@ def insertion_sort(arr):
     return arr
 
 
+def insert(seq, k):
+    pos = k
+    while pos > 0 and seq[pos] < seq[pos - 1]:
+        (seq[pos], seq[pos - 1]) = (seq[pos - 1], seq[pos])
+        pos -= 1
+    return seq
+
+
+def issort(seq, k):
+    """
+
+    :param seq:
+    :param k:
+    :return:
+    """
+    if k > 1:
+        seq = issort(seq, k - 1)
+        seq = insert(seq, k - 1)
+    return seq
+
+
 if __name__ == "__main__":
-    arr_ip = list(map(int, input("Enter sorted space separated values - ").split(" ")))
+    # arr_ip = list(map(int, input("Enter sorted space separated values - ").split(" ")))
+    arr_ip = list(range(990, 0, -1))
     arr_ip2 = arr_ip[0:]
+    arr_ip3 = arr_ip[0:]
+    # st = datetime.now()
+    # print(selection_sort(arr_ip), "time", datetime.now() - st)
     st = datetime.now()
-    print(selection_sort(arr_ip), "time", datetime.now() - st)
+    insertion_sort(arr_ip2)
+    print("time", datetime.now() - st)
     st = datetime.now()
-    print(insertion_sort(arr_ip2), "time", datetime.now() - st)
+    issort(arr_ip3, len(arr_ip3))
+    print("time", datetime.now() - st)
