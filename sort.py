@@ -1,4 +1,7 @@
 from datetime import datetime
+import sys
+
+sys.setrecursionlimit(10000)
 
 
 def selection_sort(arr):
@@ -51,7 +54,7 @@ def issort(seq, k):
 
 if __name__ == "__main__":
     # arr_ip = list(map(int, input("Enter sorted space separated values - ").split(" ")))
-    arr_ip = list(range(990, 0, -1))
+    arr_ip = list(range(5000, 0, -1))
     arr_ip2 = arr_ip[0:]
     arr_ip3 = arr_ip[0:]
     # st = datetime.now()
