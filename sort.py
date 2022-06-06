@@ -51,6 +51,10 @@ def issort(seq, k):
         seq = insert(seq, k - 1)
     return seq
 
+def merge_sort(arr):
+    A = arr[0:len(arr)//2]
+    B = arr[len(arr)//2:0]
+
 
 if __name__ == "__main__":
     # arr_ip = list(map(int, input("Enter sorted space separated values - ").split(" ")))
